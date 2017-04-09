@@ -3,6 +3,7 @@
 	<head>
 		<title>html editor</title>
 		<link rel="stylesheet" href="js/codemirror/codemirror.css">
+		<link rel="stylesheet" href="monokai.css">
 		<script src="js/codemirror/codemirror.js"></script>
 		<script src="js/codemirror/mode/xml.js"></script>
 		<script src="js/codemirror/mode/javascript.js"></script>
@@ -99,7 +100,13 @@
 
 				height: 100%;
 				font-size: 14px;
-				background-color: rgba(255,255,255,0.85);
+				background-color: rgba(39,40,34,0.85);
+
+			}
+
+			#editor .CodeMirror-gutter{
+
+				background-color: rgba(79,80,74,1);
 
 			}
 
@@ -117,7 +124,7 @@
 
 			#editor .CodeMirror-focused div.CodeMirror-selected {
 
-				background: rgba(0,0,255,0.1);
+				background: rgba(255,255,255,0.2);
 
 			}
 
@@ -182,7 +189,7 @@
 
 			//
 
-			var defaultCode = decode( 'PCFET0NUWVBFIGh0bWw+CjxodG1sPjxib2R5Pgo8c2NyaXB0Pgpkb2N1bWVudC53cml0ZWxuKCdoZWxsbyB3b3JsZCcpCjwvc2NyaXB0Pgo8L2JvZHk+PC9odG1sPg==' );
+			var defaultCode = decode( 'bVRbb9owFH6mv+KMvaRT6tBNqFMISBtl7cOqVW2laY/GPhCzxGa2w6UV/322kyCiEiHFOZfv+87FZB9uf01f/jzOILdlMbnI6lcvy5Fy9+5lJVoKLKfaoB33K7u4+toPDmP3BfpTb674Ht78qTen7O9Sq0ryK6YKpVP4uAjPKLhLqpdCpjCoP9UG9aJQ2xRywTnKYD148KRFz5JGSeZZamKmxdqC0Wzcz61dp0nCuFwZwgpV8UVBNRKmyoSu6C4pxNwkNteIZGUSPbxpPkohnaE/cUwB7gR5cuFlbKgGRkvUNAbDUGIMGiVHjXrU+peoXHv0PoaSWtSCFu6EJh8FhEUlmRVKgpDCRpeuQ6HoFgXGIHELL/dPsxmZUrmh5qlxRZejTihxvX8WrxjBVkiutkRIifq34DaPO6Z7FMvcQpPOFatKlJb41hG6Xju4aS4KHh1LIVyVswJ9lM8KaXXVHXmPqM0aXTUbnAZvBDfD+L0aSM7IiWFArmO4HrS6agKyVkb4/pBXx/WlIQ+t7nA/e0vUimtb3u1eNce7xhGB53K/lq0dTSfjwU3pOzWCPTTeCN6g2djBbhAeX5/GhXZqU7C6whPDT+GwfMUpfIbDsXV++O94ojN70ooL5RLK3UhCbgN06C4QlcInnu7QvwqN/RbsLuKH1xS1cR05RCsbYsjOKbt1biLV1kF9cmNxVQ5HZ0L350KvR90FJvUhaq9HszedEurVDxTHIoL/5N5lSX213VX3fz7/AQ==' );
 
 			var documents = [ { filename: 'Untitled', filetype: 'text/plain', autoupdate: true, code: defaultCode } ];
 
@@ -224,9 +231,10 @@
 				mode: 'text/html',
 				lineNumbers: true,
 				matchBrackets: true,
-				indentWithTabs: true,
+				indentWithTabs: false,
 				tabSize: 4,
-				indentUnit: 4
+				indentUnit: 2,
+				theme: "monokai"
 
 			} );
 
